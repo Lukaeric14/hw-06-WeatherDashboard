@@ -1010,7 +1010,7 @@ a:hover {
 
 .btn.btn-primary {
   background-color: #76323f;
-  color: #d9e9e8;
+  color: white;
 }
 
 .btn.btn-primary:hover {
@@ -1046,7 +1046,7 @@ a:hover {
 
 .btn.btn-dark {
   background-color: #1a1a1a;
-  color: #d9e9e8;
+  color: white;
 }
 
 .btn.btn-dark:hover {
@@ -1087,8 +1087,8 @@ a:hover {
 
 .card .card-header {
   padding: 0.375rem;
-  background-color: #2d3e50;
-  color: #d9e9e8;
+  background-color: #76323f;
+  color: white;
 }
 
 .card .card-body {
@@ -1143,7 +1143,7 @@ form .form-input {
   width: 100%;
   padding: 0.75rem;
   color: #1a1a1a;
-  background-color: #ffffff;
+  background-color: white;
   margin: 0.625rem 0;
   font-size: 1.2rem;
   border: 1px solid #484848;

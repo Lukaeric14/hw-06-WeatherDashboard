@@ -1,7 +1,8 @@
 var searchCity = document.querySelector('#search-form');
-
+var today = moment();
+   
 $(document).ready(function () {
-  $('#CCD').hide()
+   $('#CCD').hide()
 });
 
 
@@ -19,10 +20,20 @@ function searchCitySubmit(evt) {
   console.log(searchedCity);
 
   var requestURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + searchedCity + '&units=imperial' + '&appid=' + APIKey;
-  fetch(requestURL);
-      $("#cityName").text(searchedCity);
-  
+  fetch(requestURL)
+        .then(function(response) {
+            return response.json();
+        })
+        .then (function(data) {
+
+      $("#cityName").text(data.temp);
+     // $("#temp").text(todayTemp);
+      $("#date").text(today);
+      $("#humidity").text(todayHumidity);
+      $("#wind").text(todayind);
+
+
       $('#CCD').show();
-}};
+})};}
 
 searchCity.addEventListener('submit', searchCitySubmit);
