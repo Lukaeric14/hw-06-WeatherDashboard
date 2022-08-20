@@ -1088,7 +1088,10 @@ a:hover {
 .card .card-header {
   padding: 0.375rem;
   background-color: #76323f;
+  display: flex;
+  flex-direction: row;
   color: white;
+  justify-content: center;
 }
 
 .card .card-body {

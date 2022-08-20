@@ -26,11 +26,41 @@ var get5d = function (searchedCity) {
                 response.json().then(function (data) {
                     console.log(data);
 
-                    $("#d2cityName").text(searchedCity);
+                    var d2date = moment().add(1,'days').format('l');
+                    var d3date = moment().add(2,'days').format('l');
+                    var d4date = moment().add(3,'days').format('l');
+                    var d5date = moment().add(4,'days').format('l');
+                    var d6date = moment().add(5,'days').format('l');
+
+                    $('#icon2').attr('src', `https://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`);
                     $("#d2temp").text(data.list[0].main.temp + "°f");
-                    $("#d2date").text(today.add(1, 'days'));
-                    $("#d2humidity").text(data.main.humidity);
-                    $("#d2wind").text(data.wind.speed);
+                    $("#d2date").text(d2date);
+                    $("#d2humidity").text(data.list[0].main.humidity);
+                    $("#d2wind").text(data.list[0].wind.speed);
+
+                    $('#icon3').attr('src', `https://openweathermap.org/img/w/${data.list[1].weather[0].icon}.png`);
+                    $("#d3temp").text(data.list[1].main.temp + "°f");
+                    $("#d3date").text(d3date);
+                    $("#d3humidity").text(data.list[1].main.humidity);
+                    $("#d3wind").text(data.list[1].wind.speed);
+
+                    $('#icon4').attr('src', `https://openweathermap.org/img/w/${data.list[2].weather[0].icon}.png`);
+                    $("#d4temp").text(data.list[2].main.temp + "°f");
+                    $("#d4date").text(d4date);
+                    $("#d4humidity").text(data.list[2].main.humidity);
+                    $("#d4wind").text(data.list[2].wind.speed);
+
+                    $('#icon5').attr('src', `https://openweathermap.org/img/w/${data.list[3].weather[0].icon}.png`);
+                    $("#d5temp").text(data.list[3].main.temp + "°f");
+                    $("#d5date").text(d5date);
+                    $("#d5humidity").text(data.list[3].main.humidity);
+                    $("#d5wind").text(data.list[3].wind.speed);
+                    
+                    $('#icon6').attr('src', `https://openweathermap.org/img/w/${data.list[4].weather[0].icon}.png`);
+                    $("#d6temp").text(data.list[4].main.temp + "°f");
+                    $("#d6date").text(d6date);
+                    $("#d6humidity").text(data.list[4].main.humidity);
+                    $("#d6wind").text(data.list[4].wind.speed);
                 });
             });
     };
@@ -59,6 +89,7 @@ function searchCitySubmit(evt) {
       var lon = data.coord.lon;
 
       $("#cityName").text(searchedCity);
+      $('#icon').attr('src', `https://openweathermap.org/img/w/${data.weather[0].icon}.png`);
       $("#temp").text(data.main.temp + "°f");
       $("#date").text(today);
       $("#humidity").text(data.main.humidity);
